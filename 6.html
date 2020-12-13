@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断鼠标按钮以及修饰键</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        test
+    </div>
+    <script>
+        const oDiv = document.querySelector('div')
+
+        oDiv.addEventListener('mousedown',(e) => {
+            oDiv.textContent = `你按钮鼠标的${e.button}`
+
+            oDiv.textContent = `按了几个键${e.buttons}`
+
+            //left 1,  right 2, 两个一起 3，   middle  4
+            oDiv.textContent = `Ctrl: ${e.ctrlkey}`
+            // oDiv.textContent = `alt: ${e.altkey}`
+            // oDiv.textContent = `shift: ${e.shiftkey}`
+            // oDiv.textContent = `meta: ${e.metakey}`
+        })
+    </script>
+</body>
+</html>
